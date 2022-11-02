@@ -11,6 +11,6 @@ public class SwaggerConfig {
     public OpenAPI reservasibioskopOpenApi(){
         return new OpenAPI()
                 .info(new Info().title("gianzra_reservasi_bioskop"))
-                .servers(List.of(new Server().url("https://gianzrareservasibioskop-production.up.railway.app")));
+                .servers(List.of(new Server().url("https://gianzrareservasibioskop-production.up.railway.app/")));
     }
 }
