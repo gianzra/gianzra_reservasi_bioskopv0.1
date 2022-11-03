@@ -23,7 +23,7 @@ public class SeatServiceImpl implements SeatService {
 
     @Override
     public Seats create(Seats seat) {
-        logger.info("Fetching data user from database");
+        logger.info("Menampilkan kursi dari database");
         final Seats result = seatRepository.save(seat);
         return result;
     }
