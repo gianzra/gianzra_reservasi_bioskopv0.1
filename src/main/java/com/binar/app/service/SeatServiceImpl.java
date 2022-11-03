@@ -5,20 +5,25 @@ import com.binar.app.model.Seats;
 import com.binar.app.model.User;
 import com.binar.app.repository.SeatRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 
+
 @Service
 @Transactional
 public class SeatServiceImpl implements SeatService {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
     @Autowired
     SeatRepository seatRepository;
 
     @Override
     public Seats create(Seats seat) {
+        logger.info("Fetching data user from database");
         final Seats result = seatRepository.save(seat);
         return result;
     }
