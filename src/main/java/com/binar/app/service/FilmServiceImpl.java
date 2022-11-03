@@ -4,6 +4,8 @@ import com.binar.app.dto.FilmDTO;
 import com.binar.app.model.Films;
 import com.binar.app.repository.FilmRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
@@ -14,6 +16,7 @@ import java.util.Optional;
 @Transactional
 public class FilmServiceImpl implements FilmService {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
     @Autowired
     FilmRepository filmRepository;
 
@@ -48,6 +51,7 @@ public class FilmServiceImpl implements FilmService {
 
     @Override
     public List<Films> findAll() {
+        logger.info("Fetching data user from database");
         return filmRepository.findAll();
     }
 
@@ -55,7 +59,10 @@ public class FilmServiceImpl implements FilmService {
     public Films findById(Long film_code) {
         Optional<Films> result = filmRepository.findById(film_code);
         if(result.isPresent()) {
+            logger.info("Fetching data user from database");
             return result.get();
+        } else {
+            logger.error("Data user not found");
         }
         return null;
     }
