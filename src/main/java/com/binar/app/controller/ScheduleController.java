@@ -32,7 +32,7 @@ public class ScheduleController {
 
     @GetMapping("/all")
     public List<ScheduleDTO> findAll() {
-        return scheduleService.findAll().stream().map(schedule -> scheduleService.mapToDto(schedule)).collect(Collectors.toList());
+        return scheduleService.findAll().stream().map(schedule -> scheduleService.mapToDto(schedule)).toList();
     }
 
     @DeleteMapping("/delete/{schedule_id}")

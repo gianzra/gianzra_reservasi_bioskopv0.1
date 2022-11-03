@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/users")
@@ -32,7 +33,7 @@ public class UserController {
 
     @GetMapping("/all")
     public List<UserDTO> findAll() {
-        return userService.findAll().stream().map(user -> userService.mapToDto(user)).collect(Collectors.toList());
+        return userService.findAll().stream().map(user -> userService.mapToDto(user)).toList();
     }
 
     @DeleteMapping("/delete/{id}")

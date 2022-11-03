@@ -27,7 +27,7 @@ public class SeatController {
 
     @GetMapping("/all")
     public List<SeatDTO> findAll() {
-        return seatService.findAll().stream().map(schedule -> seatService.mapToDto(schedule)).collect(Collectors.toList());
+        return seatService.findAll().stream().map(schedule -> seatService.mapToDto(schedule)).toList();
     }
 
 }
