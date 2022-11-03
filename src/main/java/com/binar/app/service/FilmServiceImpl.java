@@ -34,6 +34,8 @@ public class FilmServiceImpl implements FilmService {
             result.setFilm_name(films.getFilm_name());
             result.setIs_showing(films.getIs_showing());
             filmRepository.save(films);
+        }else {
+            logger.error("Data film tersedia");
         }
         return null;
     }
@@ -45,13 +47,15 @@ public class FilmServiceImpl implements FilmService {
             // hard delete
             filmRepository.deleteById(film_code);
             return true;
+        }else {
+            logger.error("Data film tidak tersedia");
         }
         return false;
     }
 
     @Override
     public List<Films> findAll() {
-        logger.info("Fetching data user from database");
+        logger.info("Mengambil data film dari database");
         return filmRepository.findAll();
     }
 
@@ -59,10 +63,10 @@ public class FilmServiceImpl implements FilmService {
     public Films findById(Long film_code) {
         Optional<Films> result = filmRepository.findById(film_code);
         if(result.isPresent()) {
-            logger.info("Fetching data user from database");
+            logger.info("Mengambil data film dari database");
             return result.get();
         } else {
-            logger.error("Data user not found");
+            logger.error("Data film tidak tersedia");
         }
         return null;
     }
@@ -71,11 +75,13 @@ public class FilmServiceImpl implements FilmService {
 
     @Override
     public FilmDTO mapToDto(Films films) {
+        logger.info("Mengambil data film dari database");
         return mapper.convertValue(films, FilmDTO.class);
     }
 
     @Override
     public Films mapToEntity(FilmDTO filmDTO) {
+        logger.info("Mengambil data film dari database");
         return mapper.convertValue(filmDTO, Films.class);
     }
 
