@@ -30,6 +30,7 @@ public class SeatServiceImpl implements SeatService {
 
     @Override
     public List<Seats> findAll() {
+        logger.info("Mengambil data kursi dari database");
         return seatRepository.findAll();
     }
 
