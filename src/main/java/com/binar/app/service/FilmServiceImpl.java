@@ -16,38 +16,37 @@ import java.util.Optional;
 @Transactional
 public class FilmServiceImpl implements FilmService {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(FilmServiceImpl.class);
     @Autowired
     FilmRepository filmRepository;
 
     @Override
     public Films create(Films films) {
-        final Films result = filmRepository.save(films);
-        return result;
+        return filmRepository.save(films);
     }
 
     @Override
-    public Films update(Long film_code, Films films) {
-        Films result = findById(film_code);
+    public Films update(Long filmCode, Films films) {
+        Films result = findById(filmCode);
         if(result != null) {
             logger.info("Data film tersedia");
-            result.setFilm_code(film_code);
-            result.setFilm_name(films.getFilm_name());
-            result.setIs_showing(films.getIs_showing());
+            result.setFilmCode(filmCode);
+            result.setFilmName(films.getFilmName());
+            result.setIsShowing(films.getIsShowing());
             filmRepository.save(films);
         }else {
             logger.error("Data film tidak tersedia");
         }
-        return null;
+        return result;
     }
 
     @Override
-    public Boolean delete(Long film_code) {
-        final Films result = findById(film_code);
+    public Boolean delete(Long filmCode) {
+        final Films result = findById(filmCode);
         if (result != null) {
             logger.info("Menghapus data film dari database");
             // hard delete
-            filmRepository.deleteById(film_code);
+            filmRepository.deleteById(filmCode);
             return true;
         }else {
             logger.error("Data film tidak tersedia");
@@ -62,8 +61,8 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
-    public Films findById(Long film_code) {
-        Optional<Films> result = filmRepository.findById(film_code);
+    public Films findById(Long filmCode) {
+        Optional<Films> result = filmRepository.findById(filmCode);
         if(result.isPresent()) {
             logger.info("Data film tersedia");
             return result.get();

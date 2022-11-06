@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 @RestController
 @RequestMapping("/schedules")
@@ -24,9 +24,9 @@ public class ScheduleController {
     }
 
     @PutMapping("update/{schedule_id}")
-    public ScheduleDTO update(@PathVariable Long schedule_id, @RequestBody ScheduleDTO request) {
+    public ScheduleDTO update(@PathVariable Long scheduleId, @RequestBody ScheduleDTO request) {
         final Schedules schedule = scheduleService.mapToEntity(request);
-        final Schedules result = scheduleService.update(schedule_id, schedule);
+        final Schedules result = scheduleService.update(scheduleId, schedule);
         return scheduleService.mapToDto(result);
     }
 
@@ -36,8 +36,8 @@ public class ScheduleController {
     }
 
     @DeleteMapping("/delete/{schedule_id}")
-    public Boolean delete(@PathVariable Long schedule_id) {
-        return scheduleService.delete(schedule_id);
+    public Boolean delete(@PathVariable Long scheduleId) {
+        return scheduleService.delete(scheduleId);
     }
 
 }

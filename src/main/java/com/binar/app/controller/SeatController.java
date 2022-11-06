@@ -1,15 +1,14 @@
 package com.binar.app.controller;
 
-import com.binar.app.dto.ScheduleDTO;
+
 import com.binar.app.dto.SeatDTO;
-import com.binar.app.model.Schedules;
 import com.binar.app.model.Seats;
 import com.binar.app.service.SeatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 @RestController
 @RequestMapping("/seats")

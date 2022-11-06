@@ -16,25 +16,24 @@ import java.util.Optional;
 @Transactional
 public class ScheduleServiceImpl implements ScheduleService {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(ScheduleServiceImpl.class);
     @Autowired
     ScheduleRepository scheduleRepository;
 
     @Override
     public Schedules create(Schedules films) {
-        final Schedules result = scheduleRepository.save(films);
-        return result;
+        return scheduleRepository.save(films);
     }
 
     @Override
-    public Schedules update(Long schedule_id, Schedules schedule) {
-        Schedules result = findById(schedule_id);
+    public Schedules update(Long scheduleId, Schedules schedule) {
+        Schedules result = findById(scheduleId);
         if(result != null) {
             logger.info("Data schedules tersedia");
-            result.setTanggal_tayang(schedule.getTanggal_tayang());
-            result.setJam_mulai(schedule.getJam_mulai());
-            result.setJam_selesai(schedule.getJam_selesai());
-            result.setHarga_tiket(schedule.getHarga_tiket());
+            result.setTanggalTayang(schedule.getTanggalTayang());
+            result.setJamMulai(schedule.getJamMulai());
+            result.setJamSelesai(schedule.getJamSelesai());
+            result.setHargaTiket(schedule.getHargaTiket());
             scheduleRepository.save(schedule);
         }else {
             logger.error("Data schedules tidak tersedia");
@@ -43,12 +42,12 @@ public class ScheduleServiceImpl implements ScheduleService {
     }
 
     @Override
-    public Boolean delete(Long schedule_id) {
-        final Schedules result = findById(schedule_id);
+    public Boolean delete(Long scheduleId) {
+        final Schedules result = findById(scheduleId);
         if (result != null) {
             logger.info("Menghapus data schedules dari database");
             // hard delete
-            scheduleRepository.deleteById(schedule_id);
+            scheduleRepository.deleteById(scheduleId);
             return true;
         }else {
             logger.error("Data schedules tidak tersedia");
@@ -63,8 +62,8 @@ public class ScheduleServiceImpl implements ScheduleService {
     }
 
     @Override
-    public Schedules findById(Long schedule_id) {
-        Optional<Schedules> result = scheduleRepository.findById(schedule_id);
+    public Schedules findById(Long scheduleId) {
+        Optional<Schedules> result = scheduleRepository.findById(scheduleId);
         if(result.isPresent()) {
             logger.info("Data schedules tersedia");
             return result.get();

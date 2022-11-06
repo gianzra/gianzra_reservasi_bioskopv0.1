@@ -10,12 +10,12 @@ import lombok.*;
 public class Schedules {
 
     @Id
-    private Long schedule_id;
+    private Long scheduleId;
 
-    private Long film_code;
-    private String tanggal_tayang;
-    private String jam_mulai;
-    private String jam_selesai;
-    private Integer harga_tiket;
+    private Long filmCode;
+    private String tanggalTayang;
+    private String jamMulai;
+    private String jamSelesai;
+    private Integer hargaTiket;
 
 }

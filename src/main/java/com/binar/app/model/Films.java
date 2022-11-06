@@ -3,7 +3,7 @@ package com.binar.app.model;
 import javax.persistence.*;
 import lombok.*;
 
-import java.util.List;
+
 
 @Getter
 @Setter
@@ -12,12 +12,11 @@ import java.util.List;
 public class Films {
 
     @Id
-    private Long film_code;
-    private String film_name;
-    private Boolean is_showing;
+    private Long filmCode;
+    private String filmName;
+    private Boolean isShowing;
 
-//    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "schedule_id")
-//    private List<Schedules> schedules;
+
+
 
 }

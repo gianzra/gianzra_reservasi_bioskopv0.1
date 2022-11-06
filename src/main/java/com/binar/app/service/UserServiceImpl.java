@@ -25,8 +25,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User create(User user) {
         logger.info("Menyimpan pengguna baru {} ke Database", user.getUsername());
-        final User result = userRepository.save(user);
-        return result;
+        return userRepository.save(user);
     }
 
     @Override
@@ -35,13 +34,13 @@ public class UserServiceImpl implements UserService {
         if(result != null) {
             result.setId(id);
             result.setUsername(user.getUsername());
-            result.setEmail_address(user.getEmail_address());
+            result.setEmailAddress(user.getEmailAddress());
             result.setPassword(user.getPassword());
             userRepository.save(user);
         }else {
             logger.error("Data pengguna tidak ditemukan");
         }
-        return null;
+        return result;
     }
 
     @Override
@@ -52,7 +51,7 @@ public class UserServiceImpl implements UserService {
             userRepository.deleteById(id);
             return true;
         } else {
-            logger.error("Data pengguna tidak ditemukan");
+            logger.error("Data pengguna yang akan di delete tidak ditemukan");
         }
         return false;
     }
@@ -70,7 +69,7 @@ public class UserServiceImpl implements UserService {
             logger.info("Mengambil data pengguna dari database");
             return result.get();
         } else {
-            logger.error("Data pengguna tidak ditemukan");
+            logger.error("Id Data pengguna tidak ditemukan");
         }
         return null;
     }

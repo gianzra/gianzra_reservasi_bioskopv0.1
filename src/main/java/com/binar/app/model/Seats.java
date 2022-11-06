@@ -10,8 +10,8 @@ import lombok.*;
 public class Seats {
 
     @Id
-    private Integer no_kursi;
-    private Character studio_name;
+    private Integer noKursi;
+    private Character studioName;
 
 
 }

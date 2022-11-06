@@ -8,10 +8,10 @@ import java.util.List;
 public interface FilmService {
 
     Films create(Films films);
-    Films update(Long film_code, Films films);
-    Boolean delete(Long film_code);
+    Films update(Long filmCode, Films films);
+    Boolean delete(Long filmCode);
     List<Films> findAll();
-    Films findById(Long film_code);
+    Films findById(Long filmCode);
 
     FilmDTO mapToDto(Films films);
     Films mapToEntity(FilmDTO filmDTO);
