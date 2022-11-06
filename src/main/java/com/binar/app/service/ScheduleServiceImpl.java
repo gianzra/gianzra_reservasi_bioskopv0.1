@@ -69,7 +69,7 @@ public class ScheduleServiceImpl implements ScheduleService {
             logger.info("Data schedules tersedia");
             return result.get();
         }else {
-            logger.error("Data film tidak dimasukkan");
+            logger.error("Data schedules tidak dimasukkan");
         }
         return null;
     }
