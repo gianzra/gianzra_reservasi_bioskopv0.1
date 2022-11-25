@@ -1,0 +1,10 @@
+
+{
+java:S3305"`Inject this field value directly into "daoAuthenticationProvider", the only method that uses it.(ð……ªüÿÿÿÿ
+{
+java:S3305"`Inject this field value directly into "daoAuthenticationProvider", the only method that uses it.(º©ŸÙùÿÿÿÿ
+_
+java:S1874"DRemove this use of "WebSecurityConfigurerAdapter"; it is deprecated.(Ã÷ ´ýÿÿÿÿ
+Q	java:S125,"<This block of commented-out lines of code should be removed.(ë±×¡
+€
+java:S1128	"eRemove this unused import 'org.springframework.security.config.annotation.web.WebSecurityConfigurer'.(µØ…­ýÿÿÿÿ

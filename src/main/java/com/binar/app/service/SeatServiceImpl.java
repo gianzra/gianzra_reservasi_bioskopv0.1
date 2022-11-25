@@ -2,7 +2,6 @@ package com.binar.app.service;
 
 import com.binar.app.dto.SeatDTO;
 import com.binar.app.model.Seats;
-import com.binar.app.model.User;
 import com.binar.app.repository.SeatRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
@@ -17,7 +16,7 @@ import java.util.List;
 @Transactional
 public class SeatServiceImpl implements SeatService {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(AppUserService.class);
     @Autowired
     SeatRepository seatRepository;
 

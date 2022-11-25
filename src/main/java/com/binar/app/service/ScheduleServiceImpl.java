@@ -16,7 +16,7 @@ import java.util.Optional;
 @Transactional
 public class ScheduleServiceImpl implements ScheduleService {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(AppUserService.class);
     @Autowired
     ScheduleRepository scheduleRepository;
 

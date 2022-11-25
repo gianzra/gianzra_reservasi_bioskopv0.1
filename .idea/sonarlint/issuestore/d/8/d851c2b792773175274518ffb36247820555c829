@@ -1,0 +1,7 @@
+
+i	java:S116"TRename this field "film_code" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷±Ú¬
+i	java:S116"TRename this field "film_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Šàý
+j	java:S116"URename this field "is_showing" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú™½¦
+Q	java:S125"<This block of commented-out lines of code should be removed.(™·¤¦
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ

@@ -16,7 +16,7 @@ import java.util.Optional;
 @Transactional
 public class FilmServiceImpl implements FilmService {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(AppUserService.class);
     @Autowired
     FilmRepository filmRepository;
 

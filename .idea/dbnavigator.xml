@@ -73,7 +73,7 @@
           <description value="" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />
-          <database-version value="14.5" />
+          <database-version value="14.4" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
@@ -83,7 +83,7 @@
           <database value="db_bioskop" />
           <type value="USER_PASSWORD" />
           <user value="postgres" />
-          <deprecated-pwd value="a2F2bGluZzE1dHM=" />
+          <deprecated-pwd value="" />
         </database>
         <properties>
           <auto-commit value="false" />
