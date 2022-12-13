@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="gianzrareservasibioskop" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c22dba63-7860-4493-96a9-e0cfc5840055">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <parameter name="pName" class="java.lang.String"/>
+    <parameter name="pFilmName" class="java.lang.String"/>
+    <parameter name="pSeat" class="java.lang.String"/>
+    <parameter name="pFilmSchedule" class="java.lang.String"/>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="130" splitType="Stretch">
+            <staticText>
+                <reportElement x="180" y="80" width="200" height="30" uuid="166a2993-07bd-42b1-a668-60e4822d9db0"/>
+                <textElement>
+                    <font fontName="Sylfaen" size="16" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Gianzra Reservasi Bioskop]]></text>
+            </staticText>
+            <image>
+                <reportElement x="330" y="10" width="230" height="50" uuid="4ed114dd-2ecf-4de1-8617-5cc585a0155f"/>
+                <imageExpression><![CDATA["D:/FASILKOM UNSRI/cinema xxi.png"]]></imageExpression>
+            </image>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="53" splitType="Stretch">
+            <staticText>
+                <reportElement x="42" y="18" width="100" height="30" uuid="afbd8035-9267-4ba9-9dbb-c581b4e07f18"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Akira Expanded"/>
+                </textElement>
+                <text><![CDATA[NAME]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="240" y="18" width="100" height="30" uuid="11ad8e95-539a-4012-9f11-af5a89479c34"/>
+                <textFieldExpression><![CDATA[$P{pName}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="75" splitType="Stretch">
+            <staticText>
+                <reportElement x="42" y="0" width="100" height="30" uuid="a50a938e-1483-4d4a-a307-01f1c81392d9"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Akira Expanded"/>
+                </textElement>
+                <text><![CDATA[FILM NAME]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="42" y="40" width="100" height="30" uuid="d5edfac4-8f14-43da-b063-29c3d4b80d76"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Akira Expanded"/>
+                </textElement>
+                <text><![CDATA[SEAT]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="240" y="0" width="100" height="30" uuid="014875e4-2485-40be-823c-d084383cc9ec"/>
+                <textFieldExpression><![CDATA[$P{pFilmName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="240" y="40" width="100" height="30" uuid="614f37d9-71ee-49ea-996f-ece5417c000f"/>
+                <textFieldExpression><![CDATA[$P{pSeat}]]></textFieldExpression>
+            </textField>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="125" splitType="Stretch">
+            <staticText>
+                <reportElement x="40" y="10" width="100" height="30" uuid="6df38e77-3d51-456d-8867-66b4938cdf7f"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Akira Expanded"/>
+                </textElement>
+                <text><![CDATA[FILM SCHEDULE]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="240" y="5" width="100" height="30" uuid="89086f3a-2b76-4fd3-b59c-ce2be45c36bc"/>
+                <textFieldExpression><![CDATA[$P{pFilmSchedule}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>

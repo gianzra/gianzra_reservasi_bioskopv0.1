@@ -1,14 +1,8 @@
 package com.binar.app.service;
 
-
-import org.springframework.core.io.Resource;
-import org.springframework.web.multipart.MultipartFile;
-
+import net.sf.jasperreports.engine.JRException;
+import com.binar.app.dto.FileDataDB;
+import java.io.FileNotFoundException;
 public interface InvoiceService {
-
-    void generateInvoice();
-    String getDocumentName(Long invoiceId, String docType);
-    Resource loadFileAsResource(String fileName) throws Exception;
-    String storeFile(MultipartFile file, Long invoiceId, String docType);
-
+    FileDataDB generateFileInvoice(String filename) throws JRException, FileNotFoundException;
 }

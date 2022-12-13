@@ -9,11 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springboot-postgres-V0.0.2" />
         <module name="springboot-postgres" />
+        <module name="[Challange7]springboot-postgresv0.7" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="[Challange7]springboot-postgresv0.7" options="-parameters" />
       <module name="springboot-postgres" options="-parameters" />
       <module name="springboot-postgres-V0.0.2" options="-parameters" />
     </option>
